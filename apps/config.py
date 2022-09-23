@@ -18,9 +18,8 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False 
 
     # Assets Management
-    ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')    
-    
-    SOCIAL_AUTH_GITHUB  = False
+    ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
+    SOCIAL_AUTH_GITHUB = False
 
     GITHUB_ID      = os.getenv('GITHUB_ID')
     GITHUB_SECRET  = os.getenv('GITHUB_SECRET')
@@ -39,13 +38,14 @@ class ProductionConfig(Config):
 
     # PostgreSQL database
     SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
-        os.getenv('DB_ENGINE'   , 'mysql'),
-        os.getenv('DB_USERNAME' , 'appseed_db_usr'),
-        os.getenv('DB_PASS'     , 'pass'),
-        os.getenv('DB_HOST'     , 'localhost'),
-        os.getenv('DB_PORT'     , 3306),
-        os.getenv('DB_NAME'     , 'appseed_db')
-    ) 
+        os.getenv('DB_ENGINE', 'mysql'),
+        os.getenv('DB_USERNAME', 'test'),
+        os.getenv('DB_PASS', '12qwasZX'),
+        os.getenv('DB_HOST', '172.21.23.253'),
+        os.getenv('DB_PORT', 3306),
+        os.getenv('DB_NAME', 'test')
+    )
+
 
 class DebugConfig(Config):
     DEBUG = True
